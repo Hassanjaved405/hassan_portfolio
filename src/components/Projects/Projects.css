@@ -1,0 +1,233 @@
+/* Projects Section Styles */
+.projects-section {
+  padding: 5rem 1rem;
+  background-color: rgba(17, 24, 39, 0.5);
+}
+
+.projects-container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+  }
+}
+
+.project-card {
+  background-color: #111827;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
+
+.project-image-container {
+  height: 12rem;
+  background-color: #374151;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.1);
+}
+
+.project-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.project-description {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  flex: 1;
+  min-height: 6rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.project-tech-tag {
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(37, 99, 235, 0.2);
+  color: #60a5fa;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.project-tech-more {
+  padding: 0.25rem 0.5rem;
+  background-color: #374151;
+  color: #9ca3af;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+}
+
+/* Modal Styles */
+.project-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.project-modal {
+  background-color: #111827;
+  border-radius: 0.5rem;
+  max-width: 48rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.project-modal-content {
+  padding: 1.5rem;
+}
+
+.project-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.project-modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.project-modal-close {
+  color: #9ca3af;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.project-modal-close:hover {
+  color: white;
+}
+
+.project-modal-close svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.project-modal-image {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-modal-description {
+  color: #d1d5db;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.project-modal-section {
+  margin-bottom: 1.5rem;
+}
+
+.project-modal-section:last-child {
+  margin-bottom: 0;
+}
+
+.project-modal-section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: white;
+}
+
+.project-features-list {
+  list-style-type: disc;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: #9ca3af;
+}
+
+.project-modal-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-modal-tech-tag {
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(37, 99, 235, 0.2);
+  color: #60a5fa;
+  border-radius: 0.375rem;
+}

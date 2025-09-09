@@ -1,0 +1,95 @@
+/* Experience Section Styles */
+.experience-section {
+  padding: 5rem 1rem;
+  background-color: rgba(17, 24, 39, 0.5);
+}
+
+.experience-container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.experience-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experience-item {
+  background-color: #111827;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.experience-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .experience-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.experience-info {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .experience-info {
+    margin-bottom: 0;
+  }
+}
+
+.experience-job-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #60a5fa;
+  margin-bottom: 0.25rem;
+}
+
+.experience-company {
+  font-size: 1.25rem;
+  color: #d1d5db;
+}
+
+.experience-period {
+  color: #9ca3af;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .experience-period {
+    margin-top: 0;
+  }
+}
+
+.experience-responsibilities {
+  list-style-type: disc;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #d1d5db;
+  line-height: 1.6;
+}
