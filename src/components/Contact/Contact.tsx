@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
-  
+
   const [status, setStatus] = useState({
     loading: false,
     success: false,
@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus({ loading: true, success: false, error: false, message: '' });
-    
+
     // Check if EmailJS is configured
     if (EMAILJS_CONFIG.SERVICE_ID === 'YOUR_SERVICE_ID') {
       // Fallback to mailto
@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
       }, 3000);
       return;
     }
-    
+
     try {
       await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
@@ -55,10 +55,10 @@ const Contact: React.FC = () => {
         },
         EMAILJS_CONFIG.PUBLIC_KEY
       );
-      
+
       setStatus({ loading: false, success: true, error: false, message: 'Message sent successfully!' });
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
+
       setTimeout(() => {
         setStatus({ loading: false, success: false, error: false, message: '' });
       }, 5000);
@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="contact-section">
       <div className="contact-container">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -108,7 +108,7 @@ const Contact: React.FC = () => {
         >
           Get In Touch
         </motion.h2>
-        
+
         <div className="contact-content">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -117,10 +117,10 @@ const Contact: React.FC = () => {
           >
             <h3 className="contact-intro-title">Let's work together</h3>
             <p className="contact-intro-text">
-              I'm currently available for freelance projects and full-time opportunities. 
+              I'm currently available for freelance projects and full-time opportunities.
               Feel free to reach out if you have an interesting project or just want to connect!
             </p>
-            
+
             <div className="contact-info-list">
               {contactInfo.map((info, index) => (
                 <motion.div
@@ -135,7 +135,7 @@ const Contact: React.FC = () => {
                   <div className="contact-info-details">
                     <p className="contact-info-label">{info.label}</p>
                     {info.link ? (
-                      <a 
+                      <a
                         href={info.link}
                         target={info.label === "LinkedIn" ? "_blank" : undefined}
                         rel={info.label === "LinkedIn" ? "noopener noreferrer" : undefined}
@@ -151,7 +151,7 @@ const Contact: React.FC = () => {
               ))}
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -211,8 +211,8 @@ const Contact: React.FC = () => {
               >
                 {status.loading ? 'Sending...' : 'Send Message'}
               </motion.button>
-              
-              {status.message && (
+
+              {/* {status.message && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -220,12 +220,12 @@ const Contact: React.FC = () => {
                 >
                   {status.success ? '✓ ' : '✗ '}{status.message}
                 </motion.div>
-              )}
+              )} */}
             </form>
           </motion.div>
         </div>
       </div>
-      
+
       {/* Toast Notification */}
       {status.message && (
         <motion.div
