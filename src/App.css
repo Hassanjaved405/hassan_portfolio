@@ -1,8 +1,140 @@
 /* Global Styles */
+* {
+  scroll-behavior: smooth;
+}
+
 .app-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Scroll Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Highlight Animation */
+@keyframes sectionHighlight {
+  0% {
+    background: rgba(100, 108, 255, 0);
+  }
+  50% {
+    background: rgba(100, 108, 255, 0.1);
+  }
+  100% {
+    background: rgba(100, 108, 255, 0);
+  }
+}
+
+.section-highlight {
+  animation: sectionHighlight 1s ease-out;
+  position: relative;
+}
+
+/* Animate In Classes */
+.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-scale {
+  animation: scaleIn 0.8s ease-out forwards;
+}
+
+.animate-slide-bottom {
+  animation: slideInBottom 0.8s ease-out forwards;
+}
+
+/* Scroll Triggered Animations - Only apply to elements with specific animation classes */
+section {
+  transition: all 0.3s ease;
+}
+
+/* Remove the global opacity settings that were hiding content */
+/* Only apply animations to elements that explicitly have animation classes */
+
+/* Stagger Animation */
+.stagger-animation > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+.stagger-animation.visible > *:nth-child(1) { transition-delay: 0.1s; }
+.stagger-animation.visible > *:nth-child(2) { transition-delay: 0.2s; }
+.stagger-animation.visible > *:nth-child(3) { transition-delay: 0.3s; }
+.stagger-animation.visible > *:nth-child(4) { transition-delay: 0.4s; }
+.stagger-animation.visible > *:nth-child(5) { transition-delay: 0.5s; }
+
+.stagger-animation.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Parallax Effect */
+.parallax {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
 }
 
 /* Footer */
