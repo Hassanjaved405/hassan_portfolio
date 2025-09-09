@@ -165,3 +165,93 @@
 .contact-submit-btn:active {
   transform: scale(0.95);
 }
+
+.contact-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.contact-status-message {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  animation: slideUp 0.3s ease-out;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.contact-status-message.success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.contact-status-message.error {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Toast Notification Styles */
+.contact-toast {
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  min-width: 300px;
+  animation: slideDown 0.4s ease-out;
+}
+
+.contact-toast.success {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.95) 0%, rgba(5, 150, 105, 0.95) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-toast.error {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.95) 0%, rgba(220, 38, 38, 0.95) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-toast-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.contact-toast-icon {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px) translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) translateX(-50%);
+    opacity: 1;
+  }
+}
