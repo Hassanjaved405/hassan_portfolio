@@ -126,7 +126,7 @@ const Hero: React.FC = () => {
     cloud: ["Azure", "AWS", "Kubernetes"],
     tools: ["Docker", "RabbitMQ", "Git"]
   },
-  experience: "4+ years",
+  experience: "5+ years",
   passion: "Clean Architecture"
 };`}
               </code>

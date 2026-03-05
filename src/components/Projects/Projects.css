@@ -52,12 +52,13 @@
 
 .project-card:hover {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  transform: scale(1.05);
+  transform: translateY(-4px);
+  border-color: rgba(96, 165, 250, 0.5);
 }
 
 .project-image-container {
   height: 12rem;
-  background-color: #374151;
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -107,6 +108,14 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: auto;
+}
+
+.project-view-details {
+  color: #93c5fd;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+  font-weight: 500;
 }
 
 .project-tech-tag {

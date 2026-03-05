@@ -23,7 +23,7 @@ const About: React.FC = () => {
             className="about-text"
           >
             <p>
-              I'm a Full Stack Developer with over 4 years of experience in building scalable web applications. 
+              I'm a Full Stack Developer with over 5 years of experience in building scalable web applications. 
               My expertise spans across modern frontend frameworks like React.js and Angular, combined with 
               robust backend development using .NET and various database technologies.
             </p>
@@ -46,7 +46,7 @@ const About: React.FC = () => {
             className="about-stats"
           >
             <div className="about-stat-card">
-              <h3 className="about-stat-number">4+</h3>
+              <h3 className="about-stat-number">5+</h3>
               <p className="about-stat-label">Years Experience</p>
             </div>
             <div className="about-stat-card">

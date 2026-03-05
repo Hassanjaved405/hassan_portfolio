@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './Projects.css';
 
@@ -14,7 +14,39 @@ interface Project {
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedProject(null);
+      }
+    };
+
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [selectedProject]);
+
   const projects: Project[] = [
+    {
+      id: 7,
+      title: "ICHRA Platform Modernization",
+      description: "ICHRA is an enterprise health-benefits platform that manages the full lifecycle of employer-sponsored individual coverage workflows, from plan setup and eligibility rules to quoting, carrier integration, contributions, enrollment-related operations, and secure user access, modernized from a legacy system into domain-driven microservices behind a centralized API gateway with a modern Angular frontend.",
+      image: "/ICHRA/Screenshot 2026-03-03 163220.png",
+      technologies: [".NET 9", "ASP.NET Core", "Angular 20", "YARP", "Azure DevOps", "Docker", "SQL Server", "Redis"],
+      features: [
+        "Modernized legacy platform into dedicated Gateway, Quotes, Carrier, Identity, and Localization services",
+        "Implemented YARP-based strangler routing to support incremental migration from legacy pages",
+        "Built secure authentication flows with JWT, refresh tokens, OTP recovery, and SSO-ready endpoints",
+        "Delivered complex quoting and carrier workflows with resilient API architecture",
+        "Enabled cloud-ready observability with OpenTelemetry, Serilog, and Application Insights"
+      ]
+    },
     {
       id: 1,
       title: "Food Reserve Agency",
@@ -137,6 +169,7 @@ const Projects: React.FC = () => {
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
+                <span className="project-view-details">Click to view details</span>
                 <div className="project-tech-tags">
                   {project.technologies.slice(0, 3).map((tech, idx) => (
                     <span
@@ -176,6 +209,7 @@ const Projects: React.FC = () => {
                 <button
                   onClick={() => setSelectedProject(null)}
                   className="project-modal-close"
+                  aria-label="Close project details"
                 >
                   <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
