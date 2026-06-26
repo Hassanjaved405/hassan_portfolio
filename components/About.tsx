@@ -6,7 +6,7 @@ import { Users, Target, Award, TrendingUp, Code2, Layers, Zap } from "lucide-rea
 
 const stats = [
   { icon: Award, value: 5, suffix: "+", label: "Years of Experience", color: "from-violet-500 to-purple-600" },
-  { icon: Target, value: 100, suffix: "+", label: "Projects Delivered", color: "from-cyan-500 to-blue-600" },
+  { icon: Target, value: 50, suffix: "+", label: "Projects Delivered", color: "from-cyan-500 to-blue-600" },
   { icon: Users, value: 30, suffix: "+", label: "Happy Clients", color: "from-pink-500 to-rose-600" },
   { icon: TrendingUp, value: 99, suffix: "%", label: "Success Rate", color: "from-amber-500 to-orange-600" },
 ];
