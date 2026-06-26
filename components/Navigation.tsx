@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { LogoMark } from "./Logo";
 
 const navItems = [
   { href: "#home", label: "Home" },
@@ -76,9 +77,10 @@ const Navigation = () => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              <div className="w-9 h-9 rounded-xl gradient-main flex items-center justify-center shadow-lg shadow-purple-500/30 group-hover:shadow-purple-500/50 transition-shadow">
-                <Code2 className="w-5 h-5 text-white" />
-              </div>
+              <LogoMark
+                size={36}
+                className="shadow-lg shadow-purple-500/30 group-hover:shadow-purple-500/50 transition-shadow rounded-xl"
+              />
               <span className="text-xl font-bold gradient-text">Hassan.</span>
             </motion.a>
 
