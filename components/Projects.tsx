@@ -8,12 +8,12 @@ import { ExternalLink, X, ChevronLeft, ChevronRight, ArrowUpRight, Layers } from
 const projects = [
   {
     id: 4,
-    title: "HFMA MAP Keys",
+    title: "MAPApp",
     category: "Healthcare Analytics",
     tagline: "Enterprise Financial Intelligence Platform",
-    description: "Healthcare financial analytics platform enabling HFMA members to benchmark MAP Key metrics, submit data, and generate executive reports.",
+    description: "Healthcare financial analytics platform enabling healthcare members to benchmark MAP Key metrics, submit data, and generate executive reports.",
     longDescription:
-      "HFMA MAP Keys is a full-scale enterprise healthcare financial analytics platform built for HFMA (Healthcare Financial Management Association) members. It empowers healthcare organizations to track, benchmark, and improve financial performance using standardized MAP Keys metrics. Features include validated data submission workflows, peer-group and org-group builders, customizable SSRS-backed report generation, opportunity analysis, real-time notifications via Azure Service Bus, and comprehensive user management — all secured with MFA, SAML 2.0 SSO, and granular role-based access control.",
+      "MAPApp is a full-scale enterprise healthcare financial analytics platform built for healthcare members. It empowers healthcare organizations to track, benchmark, and improve financial performance using standardized MAP Keys metrics. Features include validated data submission workflows, peer-group and org-group builders, customizable SSRS-backed report generation, opportunity analysis, real-time notifications via Azure Service Bus, and comprehensive user management — all secured with MFA, SAML 2.0 SSO, and granular role-based access control.",
     technologies: ["Angular 12", ".NET Core", "Azure", "SQL Server", "CQRS / MediatR", "SSRS", "Azure Service Bus", "Hangfire", "SAML 2.0", "Entity Framework"],
     liveUrl: "https://mapapp.carecloud.com/",
     color: "from-emerald-500 to-teal-600",
