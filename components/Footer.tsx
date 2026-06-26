@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 
-import { Github, Linkedin, Mail, ArrowUp, Code2, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUp, Heart } from "lucide-react";
+import { LogoMark } from "./Logo";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -36,9 +37,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-xl gradient-main flex items-center justify-center shadow-lg">
-                <Code2 className="w-5 h-5 text-white" />
-              </div>
+              <LogoMark size={36} />
               <span className="text-xl font-bold gradient-text">Hassan.</span>
             </div>
             <p className="text-sm leading-relaxed text-gray-500 max-w-xs">
@@ -112,7 +111,7 @@ const Footer = () => {
             onClick={scrollToTop}
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-800 hover:bg-purple-900/50 text-gray-400 hover:text-purple-400 text-xs font-medium transition-all"
+            className="flex items-center gap-2 px-5 py-3 sm:py-2 rounded-xl bg-gray-800 hover:bg-purple-900/50 text-gray-400 hover:text-purple-400 text-xs font-medium transition-all min-h-[44px] sm:min-h-0"
           >
             <ArrowUp className="w-3.5 h-3.5" />
             Back to Top

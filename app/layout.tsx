@@ -44,6 +44,11 @@ export const metadata: Metadata = {
     title: "Hassan Javed — Full Stack Developer",
     description: "Building enterprise-grade web applications with React, .NET, and Azure.",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+  },
   robots: {
     index: true,
     follow: true,

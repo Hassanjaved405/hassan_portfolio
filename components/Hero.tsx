@@ -195,7 +195,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.85 }}
-                className="grid grid-cols-3 gap-4"
+                className="grid grid-cols-3 gap-2 sm:gap-4"
               >
                 {STATS.map((stat, i) => (
                   <motion.div
@@ -203,7 +203,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.9 + i * 0.1 }}
-                    className="text-center p-3 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-100 dark:border-slate-800"
+                    className="text-center p-2 sm:p-3 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-100 dark:border-slate-800"
                   >
                     <div className="text-2xl font-bold gradient-text">
                       {stat.value}{stat.suffix}
@@ -222,7 +222,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
             className="order-1 lg:order-2 flex justify-center"
           >
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+            <div className="relative w-60 h-60 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
               {/* Outer rotating ring */}
               <div className="absolute inset-0 rounded-full spin-slow"
                 style={{ background: "conic-gradient(from 0deg, transparent 0%, rgba(124,58,237,0.6) 30%, rgba(240,147,251,0.6) 60%, transparent 100%)", padding: "2px" }}>
