@@ -31,7 +31,7 @@ const experiences = [
     company: "Paranox Technologies",
     companyUrl: "#",
     location: "Islamabad, Pakistan",
-    period: "Nov 2024 – Aug 2025",
+    period: "Nov 2024 – Sep 2025",
     type: "Full-time",
     color: "from-violet-500 to-purple-700",
     glow: "rgba(124,58,237,0.15)",
@@ -255,7 +255,7 @@ const Experience = () => {
               Bachelor of Science — Computer Science
             </p>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              University of Gujrat • Graduated 2021
+              University of Gujrat • Graduated 2018
             </p>
           </div>
         </motion.div>
