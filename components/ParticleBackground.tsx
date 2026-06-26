@@ -12,10 +12,10 @@ const ParticleBackground = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles: any[] = [];
+    const cvs = canvas;
+    cvs.width = window.innerWidth;
+    cvs.height = window.innerHeight;
+    const particles: { x: number; y: number; update: () => void; draw: () => void }[] = [];
     const particleCount = 100;
     const connectionDistance = 150;
     const mouseRadius = 150;
@@ -31,8 +31,8 @@ const ParticleBackground = () => {
     });
 
     window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      cvs.width = window.innerWidth;
+      cvs.height = window.innerHeight;
     });
 
     class Particle {
@@ -44,8 +44,8 @@ const ParticleBackground = () => {
       color: string;
 
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        this.x = Math.random() * cvs.width;
+        this.y = Math.random() * cvs.height;
         this.size = Math.random() * 2 + 1;
         this.speedX = Math.random() * 1 - 0.5;
         this.speedY = Math.random() * 1 - 0.5;
@@ -56,11 +56,11 @@ const ParticleBackground = () => {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        if (this.x > canvas.width) this.x = 0;
-        else if (this.x < 0) this.x = canvas.width;
+        if (this.x > cvs.width) this.x = 0;
+        else if (this.x < 0) this.x = cvs.width;
 
-        if (this.y > canvas.height) this.y = 0;
-        else if (this.y < 0) this.y = canvas.height;
+        if (this.y > cvs.height) this.y = 0;
+        else if (this.y < 0) this.y = cvs.height;
 
         // Mouse interaction
         if (mouse.x && mouse.y) {
@@ -119,7 +119,7 @@ const ParticleBackground = () => {
     };
 
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, cvs.width, cvs.height);
 
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
