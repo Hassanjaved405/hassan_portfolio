@@ -49,6 +49,16 @@ const skillCategories = [
   },
 ];
 
+const tagContainerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.04 } },
+};
+
+const tagVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1 },
+};
+
 const coreSkills = [
   { name: "Full Stack Development", level: 95, color: "#667eea" },
   { name: "Cloud Architecture (Azure)", level: 88, color: "#06b6d4" },
@@ -131,20 +141,24 @@ const Skills = () => {
                     <Icon className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">{cat.title}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {cat.skills.map((skill, si) => (
+                  <motion.div
+                    className="flex flex-wrap gap-2"
+                    variants={tagContainerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ delayChildren: index * 0.06 }}
+                  >
+                    {cat.skills.map((skill) => (
                       <motion.span
                         key={skill}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: index * 0.06 + si * 0.04 }}
-                        viewport={{ once: true }}
+                        variants={tagVariants}
                         className="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300"
                       >
                         {skill}
                       </motion.span>
                     ))}
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
             );

@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hassanjaved.dev"),
   title: "Hassan Javed — Full Stack Developer",
   description:
     "Full Stack Developer with 5+ years building enterprise applications. Specializing in React, Angular, .NET Core, Azure, and microservices architecture.",

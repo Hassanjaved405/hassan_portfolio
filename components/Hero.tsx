@@ -12,12 +12,22 @@ const TITLES = [
   "Enterprise Builder",
 ];
 
+const ORBIT_RADIUS = 48;
+
+function orbitPosition(angle: number) {
+  const rad = (angle * Math.PI) / 180;
+  return {
+    x: Number((50 + ORBIT_RADIUS * Math.cos(rad)).toFixed(4)),
+    y: Number((50 + ORBIT_RADIUS * Math.sin(rad)).toFixed(4)),
+  };
+}
+
 const TECH_BADGES = [
-  { label: "React", color: "#61dafb", bg: "rgba(97,218,251,0.12)", angle: 0 },
-  { label: ".NET", color: "#9b4dca", bg: "rgba(155,77,202,0.12)", angle: 72 },
-  { label: "Azure", color: "#0078d4", bg: "rgba(0,120,212,0.12)", angle: 144 },
-  { label: "Angular", color: "#dd0031", bg: "rgba(221,0,49,0.12)", angle: 216 },
-  { label: "SQL", color: "#e8823d", bg: "rgba(232,130,61,0.12)", angle: 288 },
+  { label: "React", color: "#61dafb", bg: "rgba(97,218,251,0.12)", ...orbitPosition(0) },
+  { label: ".NET", color: "#9b4dca", bg: "rgba(155,77,202,0.12)", ...orbitPosition(72) },
+  { label: "Azure", color: "#0078d4", bg: "rgba(0,120,212,0.12)", ...orbitPosition(144) },
+  { label: "Angular", color: "#dd0031", bg: "rgba(221,0,49,0.12)", ...orbitPosition(216) },
+  { label: "SQL", color: "#e8823d", bg: "rgba(232,130,61,0.12)", ...orbitPosition(288) },
 ];
 
 const STATS = [
@@ -56,7 +66,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-[#050816]"
+      className="relative min-h-screen overflow-hidden bg-white dark:bg-[#050816]"
     >
       {/* Ambient background */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -74,8 +84,9 @@ const Hero = () => {
           }} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative flex flex-col min-h-screen">
+      <div className="flex-1 flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8 w-full">
+        <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
 
           {/* ── Left ── */}
           <div className="order-2 lg:order-1">
@@ -250,10 +261,6 @@ const Hero = () => {
 
               {/* Orbiting tech badges */}
               {TECH_BADGES.map((badge, i) => {
-                const rad = (badge.angle * Math.PI) / 180;
-                const radius = 48;
-                const x = 50 + radius * Math.cos(rad);
-                const y = 50 + radius * Math.sin(rad);
                 return (
                   <motion.div
                     key={badge.label}
@@ -261,7 +268,7 @@ const Hero = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.8 + i * 0.12, type: "spring", stiffness: 300 }}
                     className="absolute -translate-x-1/2 -translate-y-1/2"
-                    style={{ left: `${x}%`, top: `${y}%` }}
+                    style={{ left: `${badge.x}%`, top: `${badge.y}%` }}
                   >
                     <motion.div
                       animate={{ y: [0, -6, 0] }}
@@ -288,24 +295,25 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        transition={{ delay: 1 }}
+        className="shrink-0 flex justify-center pb-8"
       >
         <a
           href="#about"
           onClick={(e) => { e.preventDefault(); document.getElementById("about")?.scrollIntoView({ behavior: "smooth" }); }}
-          className="flex flex-col items-center gap-2 text-gray-400 hover:text-purple-500 transition-colors group"
+          className="flex flex-col items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-purple-500 transition-colors group"
         >
-          <span className="text-xs tracking-widest uppercase opacity-60 group-hover:opacity-100 transition-opacity">Scroll</span>
+          <span className="text-xs tracking-widest uppercase opacity-80 group-hover:opacity-100 transition-opacity">Scroll</span>
           <motion.div
             animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="p-2 rounded-full border border-gray-300 dark:border-slate-700 group-hover:border-purple-500/50 transition-colors"
+            transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+            className="p-2 rounded-full border border-gray-400 dark:border-slate-700 group-hover:border-purple-500/50 transition-colors"
           >
             <ArrowDown size={14} />
           </motion.div>
         </a>
       </motion.div>
+      </div>
     </section>
   );
 };

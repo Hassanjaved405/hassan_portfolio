@@ -18,10 +18,10 @@ const projects = [
     liveUrl: "https://mapapp.carecloud.com/",
     color: "from-emerald-500 to-teal-600",
     images: [
-      "/projects/mapapp/01.png",
-      "/projects/mapapp/02.png",
-      "/projects/mapapp/03.png",
-      "/projects/mapapp/04.png",
+      "/projects/mapapp/01.webp",
+      "/projects/mapapp/02.webp",
+      "/projects/mapapp/03.webp",
+      "/projects/mapapp/04.webp",
     ],
     features: [
       "MAP Key financial metrics tracking & peer benchmarking",
@@ -74,10 +74,10 @@ const projects = [
     liveUrl: "https://squadtrip.com/",
     color: "from-sky-500 to-blue-600",
     images: [
-      "/projects/squadtrip/Screenshot 2025-08-12 010403.jpg",
-      "/projects/squadtrip/Screenshot 2025-08-12 010424.jpg",
-      "/projects/squadtrip/Screenshot 2025-08-12 010451.jpg",
-      "/projects/squadtrip/Screenshot 2025-08-12 010512.jpg",
+      "/projects/squadtrip/Screenshot 2025-08-12 010403.webp",
+      "/projects/squadtrip/Screenshot 2025-08-12 010424.webp",
+      "/projects/squadtrip/Screenshot 2025-08-12 010451.webp",
+      "/projects/squadtrip/Screenshot 2025-08-12 010512.webp",
     ],
     features: [
       "Real-time collaborative trip planning",
@@ -100,12 +100,12 @@ const projects = [
     liveUrl: "http://pos.pameric.com/",
     color: "from-amber-500 to-orange-600",
     images: [
-      "/projects/pos/Picture1.png",
-      "/projects/pos/Picture2.png",
-      "/projects/pos/Picture3.png",
-      "/projects/pos/Picture4.png",
-      "/projects/pos/Picture5.png",
-      "/projects/pos/Picture6.png",
+      "/projects/pos/Picture1.webp",
+      "/projects/pos/Picture2.webp",
+      "/projects/pos/Picture3.webp",
+      "/projects/pos/Picture4.webp",
+      "/projects/pos/Picture5.webp",
+      "/projects/pos/Picture6.webp",
     ],
     features: [
       "High-speed checkout with barcode scanning",
@@ -152,7 +152,13 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               transition={{ duration: 0.3 }}
               className="absolute inset-0"
             >
-              <Image src={project.images[imgIdx]} alt={`${project.title} screenshot`} fill className="object-contain" />
+              <Image
+                src={project.images[imgIdx]}
+                alt={`${project.title} screenshot`}
+                fill
+                sizes="(max-width: 640px) 100vw, 896px"
+                className="object-contain"
+              />
             </motion.div>
           </AnimatePresence>
 
@@ -283,6 +289,7 @@ const Projects = () => {
                     src={project.images[0]}
                     alt={project.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`} />
